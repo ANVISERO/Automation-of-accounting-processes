@@ -40,7 +40,7 @@ public class MonthlyReportManager {
         for (Integer month : monthlyReports.keySet()) {
             int sumOfIncome = 0;
             for (MonthlyReport monthlyReport : monthlyReports.get(month)) {
-                if (!monthlyReport.IsExpense) {
+                if (!monthlyReport.isExpense) {
                     sumOfIncome += monthlyReport.quantity * monthlyReport.unitPrice;
                 }
             }
@@ -56,7 +56,7 @@ public class MonthlyReportManager {
         for (Integer month : monthlyReports.keySet()) {
             int sumOfIncome = 0;
             for (MonthlyReport monthlyReport : monthlyReports.get(month)) {
-                if (monthlyReport.IsExpense) {
+                if (monthlyReport.isExpense) {
                     sumOfIncome += monthlyReport.quantity * monthlyReport.unitPrice;
                 }
             }
@@ -72,7 +72,7 @@ public class MonthlyReportManager {
         String mostProfitableProduct = null;
         int mostProfitableProductSum = 0;
         for (MonthlyReport monthlyReport : monthlyReportArrayList) {
-            if (!monthlyReport.IsExpense && monthlyReport.quantity * monthlyReport.unitPrice > mostProfitableProductSum) {
+            if (!monthlyReport.isExpense && monthlyReport.quantity * monthlyReport.unitPrice > mostProfitableProductSum) {
                 mostProfitableProduct = monthlyReport.itemName;
                 mostProfitableProductSum = monthlyReport.quantity * monthlyReport.unitPrice;
             }
@@ -87,7 +87,7 @@ public class MonthlyReportManager {
         String biggestExpense = null;
         int biggestExpenseSum = 0;
         for (MonthlyReport monthlyReport : monthlyReportArrayList) {
-            if (monthlyReport.IsExpense && monthlyReport.quantity * monthlyReport.unitPrice > biggestExpenseSum) {
+            if (monthlyReport.isExpense && monthlyReport.quantity * monthlyReport.unitPrice > biggestExpenseSum) {
                 biggestExpense = monthlyReport.itemName;
                 biggestExpenseSum = monthlyReport.quantity * monthlyReport.unitPrice;
             }
